@@ -48,7 +48,7 @@ function initDatabase() {
                 code: "emp-101",
                 position: "DBA",
                 department: "IT",
-                manager: "Omar Sultan",
+                manager: "omarsultan",
                 branch: "HQ"
             },
             {
