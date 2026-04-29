@@ -41,37 +41,37 @@ function initDatabase() {
     if (!localStorage.getItem("users")) {
         const users = [
             {
-                username: "adham",
-                password: "123",
+                username: "adhammohamed",
+                password: "adhammohamed",
                 role: "employee",
-                name: "Adham",
+                name: "Adham Mohamed",
                 code: "emp-101",
-                position: "Employee",
+                position: "DBA",
                 department: "IT",
-                manager: "omar",
-                branch: "Cairo"
+                manager: "Omar Sultan",
+                branch: "HQ"
             },
             {
-                username: "omar",
-                password: "123",
+                username: "omarsultan",
+                password: "omarsultan",
                 role: "manager",
-                name: "Omar",
+                name: "Omar Sultan",
                 code: "mgr-201",
-                position: "Manager",
+                position: "IT Manager",
                 department: "IT",
                 manager: "admin",
-                branch: "Cairo"
+                branch: "HQ"
             },
             {
                 username: "admin",
-                password: "123",
+                password: "admin",
                 role: "admin",
                 name: "Admin",
                 code: "adm-901",
-                position: "System Admin",
+                position: "Administrator",
                 department: "Management",
                 manager: "-",
-                branch: "Main Branch"
+                branch: "HQ"
             }
         ];
 
