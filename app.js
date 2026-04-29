@@ -41,28 +41,6 @@ function initDatabase() {
     if (!localStorage.getItem("users")) {
         const users = [
             {
-                username: "adhammohamed",
-                password: "adhammohamed",
-                role: "employee",
-                name: "Adham Mohamed",
-                code: "emp-101",
-                position: "DBA",
-                department: "IT",
-                manager: "omarsultan",
-                branch: "HQ"
-            },
-            {
-                username: "omarsultan",
-                password: "omarsultan",
-                role: "manager",
-                name: "Omar Sultan",
-                code: "mgr-201",
-                position: "IT Manager",
-                department: "IT",
-                manager: "admin",
-                branch: "HQ"
-            },
-            {
                 username: "admin",
                 password: "admin",
                 role: "admin",
