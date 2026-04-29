@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Employee Attendance App</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="icon" type="image/png" href="assets/fingerprint-scan.png">
+    <link rel="apple-touch-icon" href="assets/fingerprint-scan.png">
+</head>
+
+<body>
+
+    <!-- App Container -->
+    <div class="app-container">
+
+        <!-- Login Section -->
+        <section id="loginSection" class="section active">
+            <div class="card login-card">
+                <h1>Employee Attendance App</h1>
+                <p class="subtitle">Login to your account</p>
+
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="username" placeholder="Enter your username">
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="password" placeholder="Enter your password">
+                </div>
+
+                <button id="loginBtn" class="main-btn">Login</button>
+
+                <p id="loginMessage" class="message"></p>
+            </div>
+        </section>
+
+
+        <!-- Employee Dashboard -->
+        <section id="employeeSection" class="section">
+            <div class="card">
+                <h2>Employee Dashboard</h2>
+
+                <div class="user-info-grid">
+                    <div class="info-card">
+                        <span class="info-label">Name</span>
+                        <strong id="empName">---</strong>
+                    </div>
+
+                    <div class="info-card">
+                        <span class="info-label">Code</span>
+                        <strong id="empCode">---</strong>
+                    </div>
+
+                    <div class="info-card">
+                        <span class="info-label">Position</span>
+                        <strong id="empPosition">---</strong>
+                    </div>
+
+                    <div class="info-card">
+                        <span class="info-label">Department</span>
+                        <strong id="empDept">---</strong>
+                    </div>
+
+                    <div class="info-card">
+                        <span class="info-label">Manager</span>
+                        <strong id="empManager">---</strong>
+                    </div>
+
+                    <div class="info-card">
+                        <span class="info-label">Branch</span>
+                        <strong id="empBranch">---</strong>
+                    </div>
+                </div>
+
+                <div class="attendance-buttons">
+                    <button id="checkInBtn" class="finger-btn">
+                        <img src="assets/fingerprint-scan.png" alt="Fingerprint Icon">
+                        <span>Check In</span>
+                    </button>
+
+                    <button id="checkOutBtn" class="finger-btn">
+                        <img src="assets/fingerprint-scan.png" alt="Fingerprint Icon">
+                        <span>Check Out</span>
+                    </button>
+                </div>
+
+                <h3>My Attendance Records</h3>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Check In</th>
+                                <th>Check Out</th>
+                                <th>Hours</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="employeeReportTable">
+                            <!-- Data will be added here using JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <button id="empExportBtn" class="export-btn">Export Report</button>
+                <button id="empLogoutBtn" class="logout-btn">Logout</button>
+            </div>
+        </section>
+
+
+        <!-- Manager Dashboard -->
+        <section id="managerSection" class="section">
+            <div class="card">
+                <h2>Manager Dashboard</h2>
+
+                <div class="user-info-grid">
+                    <div class="info-card">
+                        <span class="info-label">Name</span>
+                        <strong id="mgrName">---</strong>
+                    </div>
+
+                    <div class="info-card">
+                        <span class="info-label">Code</span>
+                        <strong id="mgrCode">---</strong>
+                    </div>
+
+                    <div class="info-card">
+                        <span class="info-label">Position</span>
+                        <strong id="mgrPosition">---</strong>
+                    </div>
+
+                    <div class="info-card">
+                        <span class="info-label">Department</span>
+                        <strong id="mgrDept">---</strong>
+                    </div>
+
+                    <div class="info-card">
+                        <span class="info-label">Branch</span>
+                        <strong id="mgrBranch">---</strong>
+                    </div>
+                </div>
+
+                <h3>Team Attendance Records</h3>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Date</th>
+                                <th>Check In</th>
+                                <th>Check Out</th>
+                                <th>Hours</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="managerReportTable">
+                            <!-- Data will be added here using JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <button id="mgrExportBtn" class="export-btn">Export Report</button>
+                <button id="mgrLogoutBtn" class="logout-btn">Logout</button>
+            </div>
+        </section>
+
+
+        <!-- Admin Dashboard -->
+        <section id="adminSection" class="section">
+            <div class="card">
+                <h2>Admin Dashboard</h2>
+
+                <h3 id="employeeFormTitle">Add New Employee</h3>
+
+                <div class="form-grid">
+                    <input type="text" id="newEmpName" placeholder="Employee Name">
+                    <input type="text" id="newEmpUsername" placeholder="Username">
+                    <input type="text" id="newEmpCode" placeholder="Employee Code">
+                    <input type="password" id="newEmpPassword" placeholder="Password">
+                    <input type="text" id="newEmpPosition" placeholder="Position">
+                    <input type="text" id="newEmpDept" placeholder="Department">
+                    <input type="text" id="newEmpManager" placeholder="Manager Username">
+                    <input type="text" id="newEmpBranch" placeholder="Branch">
+
+                    <select id="newEmpRole">
+                        <option value="employee">Employee</option>
+                        <option value="manager">Manager</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+
+                <div class="form-actions">
+                    <button id="addEmployeeBtn" class="main-btn">Add Employee</button>
+                    <button id="cancelUserEditBtn" class="logout-btn hidden">Cancel Edit</button>
+                </div>
+
+                <h3>All Employees</h3>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Username</th>
+                                <th>Code</th>
+                                <th>Position</th>
+                                <th>Department</th>
+                                <th>Manager</th>
+                                <th>Branch</th>
+                                <th>Role</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="allEmployeesTable">
+                            <!-- Data will be added here using JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>All Attendance Reports</h3>
+
+                <!-- Edit Report Panel -->
+                <div id="editReportPanel" class="edit-panel hidden">
+                    <h3>Edit Attendance Report</h3>
+
+                    <div class="form-grid">
+                        <input type="text" id="editReportDate" placeholder="Date">
+                        <input type="text" id="editReportCheckIn" placeholder="Check In">
+                        <input type="text" id="editReportCheckOut" placeholder="Check Out">
+                        <input type="text" id="editReportHours" placeholder="Hours">
+
+                        <select id="editReportStatus">
+                            <option value="Pending">Pending</option>
+                            <option value="Verified">Verified</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button id="saveReportEditBtn" class="main-btn">Save Report</button>
+                        <button id="cancelReportEditBtn" class="logout-btn">Cancel Report Edit</button>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Employee</th>
+                                <th>Date</th>
+                                <th>Check In</th>
+                                <th>Check Out</th>
+                                <th>Hours</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="adminReportTable">
+                            <!-- Data will be added here using JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <button id="adminExportBtn" class="export-btn">Export Report</button>
+                <button id="adminLogoutBtn" class="logout-btn">Logout</button>
+            </div>
+        </section>
+
+
+        <!-- Credit -->
+        <footer class="footer-credit">
+            <p>Made by Software Engineering Students, 2025/2026 Batch,</p>
+            <p>Graduate School of Statistical Research,</p>
+            <p>Cairo University.</p>
+        </footer>
+
+    </div>
+
+
+    <!-- Custom Notification Box -->
+    <div id="appAlertOverlay" class="app-alert-overlay">
+        <div class="app-alert-box">
+            <div class="app-alert-icon">!</div>
+            <h3 id="appAlertTitle">Notification</h3>
+            <p id="appAlertMessage">Message here</p>
+            <button id="appAlertClose" class="main-btn alert-ok-btn">OK</button>
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("sw.js");
+        }
+    </script>
+
+</body>
+</html>

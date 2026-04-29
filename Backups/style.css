@@ -1,0 +1,506 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Main Colors */
+:root {
+    --bg-color: #07111f;
+    --card-color: #0d1b2e;
+    --primary-color: #1e90ff;
+    --secondary-color: #38bdf8;
+    --text-color: #ffffff;
+    --muted-text: #9ca3af;
+    --border-color: #1f3a5f;
+    --danger-color: #ef4444;
+    --success-color: #22c55e;
+    --warning-color: #f59e0b;
+}
+
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #07111f, #0b2447);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+
+/* App Container */
+.app-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+
+/* Sections */
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+
+/* Hide Elements */
+.hidden {
+    display: none !important;
+}
+
+
+/* Cards */
+.card {
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 25px;
+    margin: 20px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Login Card */
+.login-card {
+    max-width: 420px;
+    margin-top: 80px;
+    text-align: center;
+}
+
+
+/* Headings */
+h1, h2, h3 {
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 26px;
+    color: var(--secondary-color);
+}
+
+h3 {
+    margin-top: 25px;
+    color: var(--primary-color);
+}
+
+
+/* Subtitle */
+.subtitle {
+    color: var(--muted-text);
+    margin-bottom: 25px;
+}
+
+
+/* Form Groups */
+.form-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--muted-text);
+}
+
+
+/* Inputs and Select */
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background-color: #061528;
+    color: var(--text-color);
+    outline: none;
+    font-size: 15px;
+}
+
+input::placeholder {
+    color: #6b7280;
+}
+
+input:focus, select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(30, 144, 255, 0.5);
+}
+
+
+/* Buttons General */
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+
+/* Main Button */
+.main-btn {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    margin-top: 10px;
+}
+
+.main-btn:hover {
+    background-color: #1873cc;
+}
+
+
+/* Export Button */
+.export-btn {
+    background-color: var(--warning-color);
+    color: #111827;
+    margin-top: 15px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.export-btn:hover {
+    background-color: #d97706;
+}
+
+
+/* Logout Button */
+.logout-btn {
+    background-color: var(--danger-color);
+    color: white;
+    margin-top: 15px;
+}
+
+.logout-btn:hover {
+    background-color: #dc2626;
+}
+
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.form-actions button {
+    flex: 1;
+}
+
+
+/* Small Buttons inside tables */
+.small-btn {
+    width: auto;
+    padding: 8px 12px;
+    font-size: 13px;
+    margin: 3px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+/* User Info Cards */
+.user-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.info-card {
+    background: linear-gradient(135deg, #061528, #0b2447);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.info-label {
+    display: block;
+    color: var(--muted-text);
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.info-card strong {
+    display: block;
+    color: var(--text-color);
+    font-size: 18px;
+}
+
+
+/* Attendance Buttons */
+.attendance-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+
+/* Fingerprint Style Button */
+.finger-btn {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: #061528;
+    color: var(--secondary-color);
+    border: 3px solid var(--primary-color);
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 0 25px rgba(30, 144, 255, 0.4);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.finger-btn img {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 8px;
+}
+
+.finger-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: scale(1.05);
+}
+
+.finger-btn:active {
+    transform: scale(0.95);
+}
+
+
+/* Tables */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 950px;
+}
+
+thead {
+    background-color: #102a44;
+}
+
+th, td {
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+}
+
+th {
+    color: var(--secondary-color);
+}
+
+td {
+    color: var(--text-color);
+}
+
+tbody tr:nth-child(even) {
+    background-color: #0a1a2f;
+}
+
+tbody tr:hover {
+    background-color: #12345a;
+}
+
+
+/* Admin Form Grid */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+
+/* Edit Panel */
+.edit-panel {
+    background: #061528;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+
+/* Message */
+.message {
+    margin-top: 15px;
+    color: var(--danger-color);
+    font-weight: bold;
+}
+
+
+/* Footer Credit */
+.footer-credit {
+    text-align: center;
+    margin-top: 25px;
+    padding: 15px;
+    color: var(--muted-text);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.footer-credit p {
+    margin: 0;
+}
+
+
+/* Custom Alert Box */
+.app-alert-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.app-alert-overlay.active {
+    display: flex;
+}
+
+.app-alert-box {
+    width: 90%;
+    max-width: 420px;
+    background: linear-gradient(135deg, #0d1b2e, #061528);
+    border: 1px solid var(--primary-color);
+    border-radius: 18px;
+    padding: 28px;
+    text-align: center;
+    box-shadow: 0 0 35px rgba(30, 144, 255, 0.35);
+    animation: alertPop 0.25s ease;
+}
+
+.app-alert-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+}
+
+.app-alert-box h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.app-alert-box p {
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.alert-ok-btn {
+    width: 120px;
+    margin: auto;
+}
+
+@keyframes alertPop {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .app-container {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .login-card {
+        margin-top: 40px;
+    }
+
+    .user-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .attendance-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .finger-btn {
+        width: 120px;
+        height: 120px;
+        font-size: 16px;
+    }
+
+    .finger-btn img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+}
